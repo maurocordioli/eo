@@ -168,10 +168,9 @@ function setup() {
 
 function evaluatePixel(sample, scene, metadata, customData, outputMetadata) {
   const result = evaluatePixelOrig([sample], [scene], metadata, customData, outputMetadata);
-  var idx= result[Object.keys(result)[0]];
-  
-  return colorBlend // call the colorBlend function
-(idx, // Pixel value
+  const idx= result[Object.keys(result)[0]];
+  return idx;
+  return colorBlend(idx, // Pixel value
  [0, 0.5, 1], // Define the borders
  [ [0, 0, 1], // Define the RGB colors for each border
  [0, 1, 0],
